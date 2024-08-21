@@ -107,7 +107,7 @@ const Navbar = () => {
               বিষয়
             </a>
             <a href="#" className="text-gray-700 hover:text-blue-500 whitespace-nowrap">
-              বইমেলা ২০২৪
+              বইমেলা 
             </a>
             <a href="#" className="text-gray-700 hover:text-blue-500 whitespace-nowrap">
               ই-বুক
