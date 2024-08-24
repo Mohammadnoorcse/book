@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import { IoIosCart } from "react-icons/io";
 import { CiSearch } from "react-icons/ci";
-import { PiSignIn } from "react-icons/pi";
-
 
 
 
