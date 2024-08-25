@@ -29,7 +29,11 @@ const Footer = () => {
             <a href="mailto:sales@rokomari.com" className="text-blue-500">sales@rokomari.com</a>
           </p>
           <p className="text-gray-500 text-sm">
+<<<<<<< HEAD
             (E.g. Pharmaceuticals, Banks, Insurances & other Corporate Houses)
+=======
+            (E.g. Pharmaceuticals Banks, Insurances & other Corporate Houses)
+>>>>>>> e0b751d9c1c911edcc38627a74b783157ed230e2
           </p>
           <p className="mt-4">
             <strong>Retailer Only</strong> <br />
