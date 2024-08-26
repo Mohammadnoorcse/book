@@ -329,6 +329,7 @@ const Home2 = ({ leftButton, setLeftButton }) => {
           text="প্রস্তুতি পরীক্ষা ২০২৪👍🚀"
           data={homesectiondata}
         />
+        {/*  */}
         <HomeSection
           bg="#FFFFFF"
           height="25rem"
