@@ -311,6 +311,48 @@ const Home2 = ({ leftButton, setLeftButton }) => {
           text="সেরা ডিস্কাউন্ট এ বেস্টসেলার বই"
           data={homesectiondata}
         />
+        <HomeSection
+          bg="#FFFFFF"
+          height="25rem"
+          text="HSC বিজ্ঞান বিভাগের ১ম বর্ষের বইসমূহ🚀"
+          data={homesectiondata}
+        />
+        <HomeSection
+          bg="#FFFFFF"
+          height="25rem"
+          text="HSC মানবিক বিভাগের ১ম বর্ষের বইসমূহ🚀"
+          data={homesectiondata}
+        />
+        <HomeSection
+          bg="#FFFFFF"
+          height="25rem"
+          text="প্রস্তুতি পরীক্ষা ২০২৪👍🚀"
+          data={homesectiondata}
+        />
+        <HomeSection
+          bg="#FFFFFF"
+          height="25rem"
+          text="Baby Care"
+          data={homesectiondata}
+        />
+        <HomeSection
+          bg="#FFFFFF"
+          height="25rem"
+          text="Find your next great read today!"
+          data={homesectiondata}
+        />
+        <HomeSection
+          bg="#FFFFFF"
+          height="25rem"
+          text="ড. মুহাম্মদ ইউনূস"
+          data={homesectiondata}
+        />
+        <HomeSection
+          bg="#FFFFFF"
+          height="25rem"
+          text="কালান্তর প্রকাশনী (সিলেট) এর বইয়ে নিশ্চিত ৪৯% ছাড়"
+          data={homesectiondata}
+        />
       </div>
     </div>
   );
