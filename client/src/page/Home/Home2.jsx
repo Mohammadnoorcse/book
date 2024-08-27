@@ -126,6 +126,7 @@ const Home2 = ({ leftButton, setLeftButton }) => {
           height="25rem"
           text="শুধুই আপনার জন্য"
           data={homesectiondata}
+          
         />
         {/* four section */}
         <div className="w-full h-[13rem] bg-white shadow-md flex flex-col gap-1 p-3">
