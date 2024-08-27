@@ -30,3 +30,42 @@
 }
 
 /* home 2 end */
+
+/* product details */
+.line-clamp {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    /* Number of lines to show */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+@media(max-width:1280px){
+    .bookdetails-left{
+        flex-direction: column;
+        align-items: center;
+    }
+    .bookdetails-left-2{
+        /* align-items: center; */
+    }
+}
+
+@media(max-width:1030px){
+   .bookdetails{
+    flex-direction: column;
+   }
+   .bookdetails-right{
+      width: 100%;
+      /* flex-direction: row; */
+   }
+   .bookdetails-right-1{
+    flex-direction: row;
+   }
+}
+
+@media(max-width:608px){
+    .productdetails-ebook{
+        width: 100%;
+    }
+}

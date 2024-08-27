@@ -1,5 +1,6 @@
 import React from 'react'
 import img21 from "../../assets/10067.jpg";
+import { Link } from 'react-router-dom';
 const HomeSectionCard = ({value}) => {
     const stock = value.stock;
   return (
@@ -41,9 +42,9 @@ const HomeSectionCard = ({value}) => {
           <span className="text-[16px] font-bold text-white">Add To Cart</span>
         </div>
         <div className="absolute bottom-0 w-full h-[2rem] bg-[#F5F5F5]  justify-center items-center z-40 thirditem">
-          <span className="text-[14px] font-bold text-[#48B1F7]">
+          <Link className="text-[14px] font-bold text-[#48B1F7]" to={`/book/${value._id}`}>
             View Details
-          </span>
+          </Link>
         </div>
       </div>
    
