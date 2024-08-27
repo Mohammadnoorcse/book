@@ -13,7 +13,7 @@ const HomeSection = ({bg,height,text,data}) => {
       <div className="w-full flex justify-between ">
         <h3 className="text-[18px] font-medium text-[#333]">{text}</h3>
         <Link
-          to="/"
+          to={`/${text}`}
           className="p-1 border-[1px] border-[#0397D3] text-[#0397D3] hover:bg-[#0397D3] hover:text-[white]"
         >
           View All
