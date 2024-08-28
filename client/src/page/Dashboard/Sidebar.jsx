@@ -4,35 +4,35 @@ import { FaHome, FaTrophy, FaClipboardList, FaBox, FaChartLine, FaEnvelope, FaCo
 
 const Sidebar = () => {
   return (
-    <div className="h-screen bg-purple-700 text-white flex flex-col justify-between">
-      <div className="p-4">
+    <div className="h-screen bg-sky-50 text-neutral-500 flex flex-col justify-between">
+      <div className="p-4 px-14">
         {/* Logo */}
         <div className="text-2xl font-bold mb-10">
-          <span className="text-white">Dabang</span>
+          <span className="text-neutral-950">OldDraft</span>
         </div>
 
         {/* Menu Items */}
         <nav>
           <ul className="space-y-4">
-            <li className="flex items-center space-x-3 p-2 hover:bg-purple-600 rounded">
+            <li className="flex items-center space-x-3 p-2 hover:text-white hover:bg-purple-600 rounded">
               <FaHome /> <span>Dashboard</span>
             </li>
-            <li className="flex items-center space-x-3 p-2 hover:bg-purple-600 rounded">
+            <li className="flex items-center space-x-3 p-2 hover:text-white hover:bg-purple-600 rounded">
               <FaTrophy /> <span>Leaderboard</span>
             </li>
-            <li className="flex items-center space-x-3 p-2 hover:bg-purple-600 rounded">
+            <li className="flex items-center space-x-3 p-2 hover:text-white hover:bg-purple-600 rounded">
               <FaClipboardList /> <span>Order</span>
             </li>
-            <li className="flex items-center space-x-3 p-2 hover:bg-purple-600 rounded">
+            <li className="flex items-center space-x-3 p-2 hover:text-white hover:bg-purple-600 rounded">
               <FaBox /> <span>Products</span>
             </li>
-            <li className="flex items-center space-x-3 p-2 hover:bg-purple-600 rounded">
+            <li className="flex items-center space-x-3 p-2 hover:text-white hover:bg-purple-600 rounded">
               <FaChartLine /> <span>Sales Report</span>
             </li>
-            <li className="flex items-center space-x-3 p-2 hover:bg-purple-600 rounded">
+            <li className="flex items-center space-x-3 p-2 hover:text-white hover:bg-purple-600 rounded">
               <FaEnvelope /> <span>Messages</span>
             </li>
-            <li className="flex items-center space-x-3 p-2 hover:bg-purple-600 rounded">
+            <li className="flex items-center space-x-3 p-2 hover:text-white hover:bg-purple-600 rounded">
               <FaCog /> <span>Settings</span>
             </li>
           </ul>

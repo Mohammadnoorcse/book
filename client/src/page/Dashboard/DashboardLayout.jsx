@@ -3,6 +3,7 @@ import Sidebar from './SideBar'
 import NavBar from './NavBar'
 
 const DashboardLayout = ({ children }) => {
+    
   return (
     <div>
       <div className="flex">

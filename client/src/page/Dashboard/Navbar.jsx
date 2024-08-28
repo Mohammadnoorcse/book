@@ -3,7 +3,7 @@ import React from 'react'
 function NavBar() {
   return (
     <div>
-      <div className="bg-white flex items-center justify-between px-8 py-4 shadow-md">
+      <div className="bg-sky-50 flex items-center justify-between px-8 py-4 shadow-md">
       <div className="text-2xl font-semibold">Dashboard</div>
       
       <div className="flex items-center space-x-6">
@@ -28,7 +28,7 @@ function NavBar() {
 
         {/* User Profile */}
         <div className="flex items-center space-x-2">
-          <span className="font-semibold">Musfiq</span>
+          <span className="font-semibold">Roki</span>
           <img
             src="https://via.placeholder.com/32"
             alt="User Avatar"

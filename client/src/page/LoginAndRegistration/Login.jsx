@@ -10,7 +10,7 @@ const Login = () => {
   return (
     <Fragment>
       <div className="flex justify-center items-center bg-gray-100 ">
-        <div className="bg-white mt-20 mb-20 p-10 rounded-lg shadow-lg max-w-sm w-full">
+        <div className="bg-white mt-20 mb-20 p-20  rounded-lg shadow-lg max-w-sm w-full">
           <h2 className="text-center text-2xl font-semibold mb-4">LOGIN / SIGN UP</h2>
           <hr className="mb-6" />
 
