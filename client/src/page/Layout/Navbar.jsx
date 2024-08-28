@@ -1,6 +1,8 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { IoIosCart } from "react-icons/io";
 import { CiSearch } from "react-icons/ci";
+import { getItemsFromLocalStorage } from "../Cart/cartlocal";
+import {Link} from "react-router-dom"
 
 
 
@@ -8,10 +10,16 @@ const Navbar = () => {
 
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [navbarfilter,setNavbarfiter] = useState("");
+  const [cartItems, setCartItems] = useState([]);
 
   const handleMobileMenuToggle = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
+ useEffect(() => {
+   const savedItems = getItemsFromLocalStorage("cartItem", []);
+   setCartItems(savedItems);
+ }, []);
+
 
   return (
     <div>
@@ -20,14 +28,14 @@ const Navbar = () => {
           <div className="flex justify-between items-center py-3">
             {/* Logo */}
             <div className="flex items-center">
-              <a href="#" className="text-xl font-bold text-black">
+              <Link to="/" className="text-xl font-bold text-black">
                 {/* Your Logo Image */}
                 <img
                   src="https://www.rokomari.com/static/200/images/rokomari_logo.png"
                   alt="Logo"
                   className="h-8 w-auto"
                 />
-              </a>
+              </Link>
             </div>
 
             {/* Search Bar */}
@@ -74,15 +82,30 @@ const Navbar = () => {
 
             {/* Right Side Links */}
             <div className="hidden md:flex space-x-4 items-center">
-              <a href="login" className="text-gray-600 hover:text-blue-500">
+              <Link to="/login" className="text-gray-600 hover:text-blue-500">
                 Sign In
-              </a>
-              <a href="becomeseller" className="text-gray-600 hover:text-blue-500">
+              </Link>
+              <Link
+                to="/becomeseller"
+                className="text-gray-600 hover:text-blue-500"
+              >
                 Become A Seller
-              </a>
-              <a href="#" className="text-gray-600 hover:text-blue-500">
+              </Link>
+              <Link
+                to="/cart"
+                className="text-gray-600 hover:text-blue-500 relative"
+              >
                 <IoIosCart />
-              </a>
+                <div
+                  className={
+                    cartItems && cartItems.length > 0
+                      ? "absolute top-[-0.8rem] left-2 w-4  h-4 bg-[red] rounded-md flex justify-center items-center"
+                      : "hidden"
+                  }
+                >
+                  <p className="text-white text-[10px]">{cartItems.length}</p>
+                </div>
+              </Link>
             </div>
 
             {/* Mobile Menu Button */}
@@ -120,24 +143,24 @@ const Navbar = () => {
               placeholder="Search for the old book you need"
               className="bg-gray-200 rounded-md px-4 py-2 w-full my-2"
             />
-            <a
-              href="#"
+            <Link
+              to="/login"
               className="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-200"
             >
               Sign In
-            </a>
-            <a
-              href="#"
+            </Link>
+            <Link
+              to="/"
               className="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-200"
             >
               Become A Seller
-            </a>
-            <a
-              href="#"
+            </Link>
+            <Link
+              to="/cart"
               className="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-200"
             >
               Cart
-            </a>
+            </Link>
           </div>
         </div>
 
@@ -145,60 +168,60 @@ const Navbar = () => {
         <div className="bg-blue-50 py-2">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex space-x-6 overflow-x-auto text-center">
-              <a
-                href="#"
+              <Link
+                 to="/"
                 className="text-gray-700 hover:text-blue-500 whitespace-nowrap"
               >
                 লেখক
-              </a>
-              <a
-                href="#"
+              </Link>
+              <Link
+                 to="/"
                 className="text-gray-700 hover:text-blue-500 whitespace-nowrap"
               >
                 বিষয়
-              </a>
-              <a
-                href="#"
+              </Link>
+              <Link
+                 to="/"
                 className="text-gray-700 hover:text-blue-500 whitespace-nowrap"
               >
                 বইমেলা
-              </a>
-              <a
-                href="#"
+              </Link>
+              <Link
+                 to="/"
                 className="text-gray-700 hover:text-blue-500 whitespace-nowrap"
               >
                 ই-বুক
-              </a>
-              <a
-                href="#"
+              </Link>
+              <Link
+                 to="/"
                 className="text-gray-700 hover:text-blue-500 whitespace-nowrap"
               >
                 HSC ও ভর্তি প্রস্তুতি
-              </a>
-              <a
-                href="#"
+              </Link>
+              <Link
+                 to="/"
                 className="text-gray-700 hover:text-blue-500 whitespace-nowrap"
               >
                 ইসলামি বই
-              </a>
-              <a
-                href="#"
+              </Link>
+              <Link
+                 to="/"
                 className="text-gray-700 hover:text-blue-500 whitespace-nowrap"
               >
                 ইংরেজি ভাষার বই
-              </a>
-              <a
-                href="#"
+              </Link>
+              <Link
+                 to="/"
                 className="text-gray-700 hover:text-blue-500 whitespace-nowrap"
               >
                 পশ্চিমবঙ্গের বই
-              </a>
-              <a
-                href="#"
+              </Link>
+              <Link
+                to="/"
                 className="text-gray-700 hover:text-blue-500 whitespace-nowrap"
               >
                 অতিরিক্ত ছাড়ের বই
-              </a>
+              </Link>
             </div>
           </div>
         </div>
