@@ -8,19 +8,28 @@ import BookDetails from './page/book/BookDetails'
 import Login from './page/LoginAndRegistration/Login'
 import BecomeSeller from './page/LoginAndRegistration/BecomeSeller'
 import Signup from './page/LoginAndRegistration/Signup'
+import Cart from './page/Cart/Cart'
 const App = () => {
   return (
     <BrowserRouter>
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
+
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
+        <Route path="/becomeseller" element={<BecomeSeller />} />
+
+        {/* user auth check */}
         <Route
           path="/book/:id"
           element={<ProtectUser element={<BookDetails />} />}
         />
-        <Route path="/login" element={<Login />} />
-        <Route path="/signup" element={<Signup/>} />
-        <Route path="/becomeseller" element={<BecomeSeller />} />
+        <Route
+          path="/cart"
+          element={<ProtectUser element={<Cart />} />}
+        />
+
       </Routes>
 
       <Footer />

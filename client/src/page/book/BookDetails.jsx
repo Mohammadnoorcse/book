@@ -1,8 +1,9 @@
 import React, { useRef, useState } from 'react'
 import img1 from "../../assets/10071.jpg";
-import {Link} from "react-router-dom"
+import {Link,useParams} from "react-router-dom"
 import HomeSection from '../Home/HomeSection';
 import { homesectiondata } from '../Home/data';
+import { addItemToLocalStorage } from '../Cart/cartlocal';
 const BookDetails = () => {
     const[wantRead,setReadWant] = useState(false);
     const [summaryBtn,setSummaryBtn] = useState("summary");
@@ -19,6 +20,12 @@ const BookDetails = () => {
       setHover(0);
      }
      const comment = true;
+   const handleAddItem = (id) => {
+     if (id !== "") {
+       addItemToLocalStorage("cartItem", id);
+     }
+    
+   };
   return (
     <div
       className={
@@ -208,7 +215,11 @@ const BookDetails = () => {
                 <div className="w-[10rem] h-[3rem] border border-[#33C24D] flex items-center justify-center text-[#33C24D] hover:bg-[#33C24D] hover:text-white cursor-pointer rounded-sm">
                   <span> একটু পড়ে দেখুন </span>
                 </div>
-                <div className="w-[10rem] h-[3rem] bg-[#4398fe] flex items-center justify-center text-white hover:bg-[#33C24D] hover:text-white cursor-pointer rounded-sm">
+                <div
+                  className="w-[10rem] h-[3rem] bg-[#4398fe] flex items-center justify-center text-white hover:bg-[#33C24D] hover:text-white cursor-pointer rounded-sm"
+                  onClick={() => handleAddItem(1)}
+                  // onClick={() => handleAddItem(value._id)}
+                >
                   <span className="font-bold">Add to Cart</span>
                 </div>
               </div>
