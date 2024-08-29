@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { IoIosCart } from "react-icons/io";
 import { CiSearch } from "react-icons/ci";
 import { getItemsFromLocalStorage } from "../Cart/cartlocal";
-import {Link} from "react-router-dom"
+import {Link, useLocation} from "react-router-dom"
 
 
 
@@ -20,10 +20,14 @@ const Navbar = () => {
    setCartItems(savedItems);
  }, []);
 
+ const { pathname } = useLocation();
+
 
   return (
     <div>
-      <nav className="bg-white shadow-sm">
+      <nav
+        className={pathname === "/deshboard" ? "hidden" : "bg-white shadow-sm"}
+      >
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center py-3">
             {/* Logo */}
@@ -169,49 +173,49 @@ const Navbar = () => {
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex space-x-6 overflow-x-auto text-center">
               <Link
-                 to="/"
+                to="/"
                 className="text-gray-700 hover:text-blue-500 whitespace-nowrap"
               >
                 লেখক
               </Link>
               <Link
-                 to="/"
+                to="/"
                 className="text-gray-700 hover:text-blue-500 whitespace-nowrap"
               >
                 বিষয়
               </Link>
               <Link
-                 to="/"
+                to="/"
                 className="text-gray-700 hover:text-blue-500 whitespace-nowrap"
               >
                 বইমেলা
               </Link>
               <Link
-                 to="/"
+                to="/"
                 className="text-gray-700 hover:text-blue-500 whitespace-nowrap"
               >
                 ই-বুক
               </Link>
               <Link
-                 to="/"
+                to="/"
                 className="text-gray-700 hover:text-blue-500 whitespace-nowrap"
               >
                 HSC ও ভর্তি প্রস্তুতি
               </Link>
               <Link
-                 to="/"
+                to="/"
                 className="text-gray-700 hover:text-blue-500 whitespace-nowrap"
               >
                 ইসলামি বই
               </Link>
               <Link
-                 to="/"
+                to="/"
                 className="text-gray-700 hover:text-blue-500 whitespace-nowrap"
               >
                 ইংরেজি ভাষার বই
               </Link>
               <Link
-                 to="/"
+                to="/"
                 className="text-gray-700 hover:text-blue-500 whitespace-nowrap"
               >
                 পশ্চিমবঙ্গের বই
