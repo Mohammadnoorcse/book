@@ -324,7 +324,7 @@ const DetailsCart = () => {
         <div
           className={
             shippModel
-              ? "fixed left-[30%] w-[23rem] h-auto bg-white  z-40 shadow-md rounded-md p-4 flex flex-col gap-3"
+              ? "fixed left-[30%] w-[23rem] h-auto bg-white  z-40 shadow-md rounded-md p-4 flex flex-col gap-3 shapping-model"
               : "hidden"
           }
         >

@@ -10,6 +10,7 @@ import BecomeSeller from './page/LoginAndRegistration/BecomeSeller'
 import Signup from './page/LoginAndRegistration/Signup'
 import Cart from './page/Cart/Cart'
 import Dashboard from './page/Dashboard/Dashboard'
+import Profile from './page/Profile/Profile'
 const App = () => {
   return (
     <BrowserRouter>
@@ -25,6 +26,10 @@ const App = () => {
         <Route
           path="/book/:id"
           element={<ProtectUser element={<BookDetails />} />}
+        />
+        <Route
+          path="/profile"
+          element={<ProtectUser element={<Profile />} />}
         />
         <Route path="/cart" element={<ProtectUser element={<Cart />} />} />
         <Route path="/deshboard" element={<Dashboard/>} />

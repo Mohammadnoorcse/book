@@ -9,6 +9,7 @@ import {Link, useLocation} from "react-router-dom"
 const Navbar = () => {
 
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const[isDropDown,setIsDropDown] = useState(false);
   const [navbarfilter,setNavbarfiter] = useState("");
   const [cartItems, setCartItems] = useState([]);
 
@@ -21,6 +22,11 @@ const Navbar = () => {
  }, []);
 
  const { pathname } = useLocation();
+
+ const auth =true;
+ const role = false;
+
+
 
 
   return (
@@ -86,9 +92,209 @@ const Navbar = () => {
 
             {/* Right Side Links */}
             <div className="hidden md:flex space-x-4 items-center">
-              <Link to="/login" className="text-gray-600 hover:text-blue-500">
-                Sign In
-              </Link>
+              {/* check auth */}
+              {auth ? (
+                <>
+                  <div
+                    className="flex gap-2 items-center cursor-pointer relative"
+                    onClick={() => setIsDropDown(!isDropDown)}
+                  >
+                    <i class="fa-solid fa-user"></i>
+                    <span>Aminur</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+
+                    <div
+                      className={
+                        isDropDown
+                          ? "absolute top-8 left-[-2rem] w-[12rem] border-2 shadow-md bg-[#FFFFFF] rounded-sm p-2 flex flex-col gap-4 z-[500]"
+                          : "hidden"
+                      }
+                    >
+                      {role ? (
+                        <Link
+                          to="/"
+                          className="flex gap-2 items-center text-[#212529] font-normal text-nowrap text-[1rem] hover:text-[#4398FE]"
+                         
+                        >
+                          <img
+                            src="https://www.rokomari.com/static/200/images/user-profile/my_profile.svg"
+                            alt=""
+                            className="w-[1.4rem]"
+                          />
+                          My Deshboad
+                        </Link>
+                      ) : (
+                        <Link
+                          to="/profile"
+                          className="flex gap-2 items-center text-[#212529] font-normal text-nowrap text-[1rem] hover:text-[#4398FE] "
+                         
+                        >
+                          <img
+                            src="https://www.rokomari.com/static/200/images/user-profile/my_profile.svg"
+                            alt=""
+                            className="w-[1.4rem]"
+                          />
+                          My Profile
+                        </Link>
+                      )}
+                      <Link
+                        to="/"
+                        className="flex gap-2 items-center text-[#212529] font-normal text-nowrap text-[1rem] hover:text-[#4398FE]"
+                       
+                      >
+                        <img
+                          src="https://www.rokomari.com/static/200/images/user-profile/orders.svg"
+                          alt=""
+                          className="w-[1.4rem]"
+                        />
+                        Orders
+                      </Link>
+                      <Link
+                        to="/"
+                        className="flex gap-2 items-center text-[#212529] font-normal text-nowrap text-[1rem] hover:text-[#4398FE]"
+                       
+                      >
+                        <img
+                          src="https://www.rokomari.com/static/200/images/user-profile/thumb_up_2_line.svg"
+                          alt=""
+                          className="w-[1.4rem]"
+                        />
+                        Bestselling eBooks
+                      </Link>
+                      <Link
+                        to="/"
+                        className="flex gap-2 items-center text-[#212529] font-normal text-nowrap text-[1rem] hover:text-[#4398FE]"
+                       
+                      >
+                        <img
+                          src="https://www.rokomari.com/static/200/images/user-profile/notebook_line.svg"
+                          alt=""
+                          className="w-[1.4rem]"
+                        />
+                        eBook Library
+                      </Link>
+                      <Link
+                        to="/"
+                        className="flex gap-2 items-center text-[#212529] font-normal text-nowrap text-[1rem] hover:text-[#4398FE]"
+                       
+                      >
+                        <img
+                          src="https://www.rokomari.com/static/200/images/user-profile/list_check_3_line.svg"
+                          alt=""
+                          className="w-[1.4rem]"
+                        />
+                        Booklist
+                      </Link>
+                      <Link
+                        to="/"
+                        className="flex gap-2 items-center text-[#212529] font-normal text-nowrap text-[1rem] hover:text-[#4398FE]"
+                       
+                      >
+                        <img
+                          src="https://www.rokomari.com/static/200/images/user-choice/user-interest-page-icon.svg"
+                          alt=""
+                          className="w-[1.4rem]"
+                        />
+                        My Interests
+                      </Link>
+                      <Link
+                        to="/"
+                        className="flex gap-2 items-center text-[#212529] font-normal text-nowrap text-[1rem] hover:text-[#4398FE]"
+                       
+                      >
+                        <img
+                          src="https://www.rokomari.com/static/200/images/user-profile/book_3_line.svg"
+                          alt=""
+                          className="w-[1.4rem]"
+                        />
+                        Bookshelf
+                      </Link>
+                      <Link
+                        to="/"
+                        className="flex gap-2 items-center text-[#212529] font-normal text-nowrap text-[1rem] hover:text-[#4398FE]"
+                       
+                      >
+                        <img
+                          src="https://www.rokomari.com/static/200/images/user-profile/heart_line.svg"
+                          alt=""
+                          className="w-[1.4rem]"
+                        />
+                        Wishlist
+                      </Link>
+                      <Link
+                        to="/"
+                        className="flex gap-2 items-center text-[#212529] font-normal text-nowrap text-[1rem] hover:text-[#4398FE]"
+                       
+                      >
+                        <img
+                          src="https://www.rokomari.com/static/200/images/user-profile/star_line.svg"
+                          alt=""
+                          className="w-[1.4rem]"
+                        />
+                        Reviews
+                      </Link>
+                      <Link
+                        to="/"
+                        className="flex gap-2 items-center text-[#212529] font-normal text-nowrap text-[1rem] hover:text-[#4398FE]"
+                       
+                      >
+                        <img
+                          src="https://www.rokomari.com/static/200/images/user-profile/Point.svg"
+                          alt=""
+                          className="w-[1.4rem]"
+                        />
+                        Rokomari Points
+                      </Link>
+                      <Link
+                        to="/"
+                        className="flex gap-2 items-center text-[#212529] font-normal text-nowrap text-[1rem] hover:text-[#4398FE]"
+                       
+                      >
+                        <img
+                          src="https://www.rokomari.com/static/200/images/user-profile/user_heart_line.svg"
+                          alt=""
+                          className="w-[1.4rem]"
+                        />
+                        Following Authors
+                      </Link>
+                      <Link
+                        to="/"
+                        className="flex gap-2 items-center text-[#212529] font-normal text-nowrap text-[1rem] hover:text-[#4398FE]"
+                       
+                      >
+                        <img
+                          src="https://www.rokomari.com/static/200/images/user-profile/arcticons_bkash.svg"
+                          alt=""
+                          className="w-[1.4rem]"
+                        />
+                        Bkash Account
+                      </Link>
+                      <Link
+                        to="/"
+                        className="flex gap-2 items-center text-[#212529] font-normal text-nowrap text-[1rem] hover:text-[#4398FE]"
+                       
+                      >
+                        <img
+                          src="https://www.rokomari.com/static/200/images/user-profile/tabler--logout-2.svg"
+                          alt=""
+                          className="w-[1.4rem]"
+                        />
+                        Sign Out
+                      </Link>
+                    </div>
+                  </div>
+                </>
+              ) : (
+                <>
+                  <Link
+                    to="/login"
+                    className="text-gray-600 hover:text-blue-500"
+                  >
+                    Sign In
+                  </Link>
+                </>
+              )}
+
               <Link
                 to="/becomeseller"
                 className="text-gray-600 hover:text-blue-500"
