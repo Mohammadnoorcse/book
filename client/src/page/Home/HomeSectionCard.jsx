@@ -13,7 +13,7 @@ const HomeSectionCard = ({value}) => {
        }
      };
   return (
-    <div className="w-full h-full border-2 flex flex-col gap-1 justify-center items-center relative third-card">
+    <div className="w-full h-full border-2 flex flex-col gap-1 justify-center items-center relative third-card p-2">
       <img src={value.img} alt="" className="w-[12rem] h-[11.5rem]" />
       <h4 className="text-[14px] font-medium text-ellipsis text-nowrap overflow-hidden ">
         প্যারাডক্সিক্যাল সাজিদ ২
@@ -52,14 +52,13 @@ const HomeSectionCard = ({value}) => {
       >
         <span className="text-[16px] font-bold text-white ">Add To Cart</span>
       </div>
-      <div className="absolute bottom-0 w-full h-[2rem] bg-[#F5F5F5]  justify-center items-center z-40 thirditem">
-        <Link
-          className="text-[14px] font-bold text-[#48B1F7]"
-          to={`/book/${value._id}`}
-        >
+      <Link className="absolute bottom-0 w-full h-[2rem] bg-[#F5F5F5]  justify-center items-center z-40 thirditem text-[14px] font-bold text-[#48B1F7]" to={`/book/${value._id}`}>
+        
+      
           View Details
-        </Link>
-      </div>
+        
+      </Link>
+    
     </div>
   );
 }
