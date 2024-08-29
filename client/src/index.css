@@ -149,3 +149,32 @@
         }
 }
 
+
+/* cart section */
+@media(max-width:900px) {
+    .cart-second {
+        flex-direction: column;
+    }
+}
+@media(max-width:600px) {
+    .cart-card-img{
+      width: 4rem;
+      height: 4rem;
+    }
+    .cart-card-text-1{
+        font-size: 14px;
+    }
+    .cart-card-text-2{
+        font-size: 13px;
+    }
+    .cart-card-text-3{
+        gap: 0.5rem;
+    }
+    .cart-card-text-4{
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+    }
+    .cart-card-text-5{
+        font-size: 14px;
+    }
+}
