@@ -1,58 +1,62 @@
-import React, { useState } from 'react'
-import Account from './component/Account';
-import Order from './component/Order';
-import Ebook from './component/Ebook';
-import Lists from './component/Lists';
-import BookShelf from './component/BookShelf';
-import Wishlist from './component/Wishlist';
-import Interests from './component/Interests';
-import Reviews from './component/Reviews';
-import Balance from './component/Balance';
-import Points from './component/Points';
-import Following from './component/Following';
-import Courses from './component/Courses';
-import Voucher from './component/Voucher';
-import Bkash from './component/Bkash';
+// ProfileSection
+
+import React, { useState } from "react";
+import Account from "./component/Account";
+import Order from "./component/Order";
+import Ebook from "./component/Ebook";
+import Lists from "./component/Lists";
+import BookShelf from "./component/BookShelf";
+import Wishlist from "./component/Wishlist";
+import Interests from "./component/Interests";
+import Reviews from "./component/Reviews";
+import Balance from "./component/Balance";
+import Points from "./component/Points";
+import Following from "./component/Following";
+import Courses from "./component/Courses";
+import Voucher from "./component/Voucher";
+import Bkash from "./component/Bkash";
+import { useParams } from "react-router-dom";
+
+const ProfileSection = () => {
+    const {section} = useParams();
+  const [activeSidebar, setActiveSidebar] = useState(section);
 
 
-const Profile = () => {
-    const [activeSidebar,setActiveSidebar] = useState("account");
+  const renderView = () => {
+    switch (activeSidebar) {
+      case "account":
+        return <Account />;
+      case "order":
+        return <Order />;
+      case "ebook":
+        return <Ebook />;
+      case "list":
+        return <Lists />;
+      case "bookshelf":
+        return <BookShelf />;
+      case "wishlist":
+        return <Wishlist />;
+      case "interest":
+        return <Interests />;
+      case "rating":
+        return <Reviews />;
+      case "balance":
+        return <Balance />;
+      case "point":
+        return <Points />;
+      case "following":
+        return <Following />;
+      case "course":
+        return <Courses />;
+      case "load":
+        return <Voucher />;
+      case "bkash":
+        return <Bkash />;
+      default:
+        return <h1>404 Not Found</h1>;
+    }
+  };
 
-     const renderView = () => {
-       switch (activeSidebar) {
-         case "account":
-           return <Account />;
-         case "order":
-           return <Order/>;
-         case "ebook":
-           return <Ebook/>;
-         case "list":
-           return <Lists/>;
-         case "bookshelf":
-           return <BookShelf/>;
-         case "wishlist":
-           return <Wishlist/>;
-         case "interest":
-           return <Interests/>;
-         case "rating":
-           return <Reviews/>;
-         case "balance":
-           return <Balance/>;
-         case "point":
-           return <Points/>;
-         case "following":
-           return <Following/>;
-         case "course":
-           return <Courses/>;
-         case "load":
-           return <Voucher/>;
-         case "bkash":
-           return <Bkash/>;
-         default:
-           return <h1>404 Not Found</h1>;
-       }
-     };
-    
   return (
     <div
       className="w-full h-screen bg-[#F1F2F4] pb-4 overflow-auto"
@@ -221,12 +225,11 @@ const Profile = () => {
         </div>
         {/* right */}
         <div className="w-full  bg-[#fff] rounded-r-sm box-shadow flex  flex-col gap-4 top-border p-4">
-
           {renderView()}
         </div>
       </div>
     </div>
   );
-}
+};
 
-export default Profile
+export default ProfileSection;
