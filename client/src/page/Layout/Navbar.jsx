@@ -112,9 +112,8 @@ const Navbar = () => {
                     >
                       {role ? (
                         <Link
-                          to="/"
+                          to="/deshboard"
                           className="flex gap-2 items-center text-[#212529] font-normal text-nowrap text-[1rem] hover:text-[#4398FE]"
-                         
                         >
                           <img
                             src="https://www.rokomari.com/static/200/images/user-profile/my_profile.svg"
@@ -125,9 +124,8 @@ const Navbar = () => {
                         </Link>
                       ) : (
                         <Link
-                          to="/profile"
+                          to="/profile/account"
                           className="flex gap-2 items-center text-[#212529] font-normal text-nowrap text-[1rem] hover:text-[#4398FE] "
-                         
                         >
                           <img
                             src="https://www.rokomari.com/static/200/images/user-profile/my_profile.svg"
@@ -138,9 +136,8 @@ const Navbar = () => {
                         </Link>
                       )}
                       <Link
-                        to="/"
+                        to="/profile/order"
                         className="flex gap-2 items-center text-[#212529] font-normal text-nowrap text-[1rem] hover:text-[#4398FE]"
-                       
                       >
                         <img
                           src="https://www.rokomari.com/static/200/images/user-profile/orders.svg"
@@ -150,9 +147,8 @@ const Navbar = () => {
                         Orders
                       </Link>
                       <Link
-                        to="/"
+                        to="/profile/ebook"
                         className="flex gap-2 items-center text-[#212529] font-normal text-nowrap text-[1rem] hover:text-[#4398FE]"
-                       
                       >
                         <img
                           src="https://www.rokomari.com/static/200/images/user-profile/thumb_up_2_line.svg"
@@ -162,9 +158,8 @@ const Navbar = () => {
                         Bestselling eBooks
                       </Link>
                       <Link
-                        to="/"
+                        to="/profile/ebook"
                         className="flex gap-2 items-center text-[#212529] font-normal text-nowrap text-[1rem] hover:text-[#4398FE]"
-                       
                       >
                         <img
                           src="https://www.rokomari.com/static/200/images/user-profile/notebook_line.svg"
@@ -174,9 +169,8 @@ const Navbar = () => {
                         eBook Library
                       </Link>
                       <Link
-                        to="/"
+                        to="/profile/list"
                         className="flex gap-2 items-center text-[#212529] font-normal text-nowrap text-[1rem] hover:text-[#4398FE]"
-                       
                       >
                         <img
                           src="https://www.rokomari.com/static/200/images/user-profile/list_check_3_line.svg"
@@ -186,9 +180,8 @@ const Navbar = () => {
                         Booklist
                       </Link>
                       <Link
-                        to="/"
+                        to="/profile/interest"
                         className="flex gap-2 items-center text-[#212529] font-normal text-nowrap text-[1rem] hover:text-[#4398FE]"
-                       
                       >
                         <img
                           src="https://www.rokomari.com/static/200/images/user-choice/user-interest-page-icon.svg"
@@ -198,9 +191,8 @@ const Navbar = () => {
                         My Interests
                       </Link>
                       <Link
-                        to="/"
+                        to="/profile/bookshelf"
                         className="flex gap-2 items-center text-[#212529] font-normal text-nowrap text-[1rem] hover:text-[#4398FE]"
-                       
                       >
                         <img
                           src="https://www.rokomari.com/static/200/images/user-profile/book_3_line.svg"
@@ -210,9 +202,8 @@ const Navbar = () => {
                         Bookshelf
                       </Link>
                       <Link
-                        to="/"
+                        to="/profile/wishlist"
                         className="flex gap-2 items-center text-[#212529] font-normal text-nowrap text-[1rem] hover:text-[#4398FE]"
-                       
                       >
                         <img
                           src="https://www.rokomari.com/static/200/images/user-profile/heart_line.svg"
@@ -222,9 +213,8 @@ const Navbar = () => {
                         Wishlist
                       </Link>
                       <Link
-                        to="/"
+                        to="/profile/rating"
                         className="flex gap-2 items-center text-[#212529] font-normal text-nowrap text-[1rem] hover:text-[#4398FE]"
-                       
                       >
                         <img
                           src="https://www.rokomari.com/static/200/images/user-profile/star_line.svg"
@@ -234,9 +224,8 @@ const Navbar = () => {
                         Reviews
                       </Link>
                       <Link
-                        to="/"
+                        to="/profile/point"
                         className="flex gap-2 items-center text-[#212529] font-normal text-nowrap text-[1rem] hover:text-[#4398FE]"
-                       
                       >
                         <img
                           src="https://www.rokomari.com/static/200/images/user-profile/Point.svg"
@@ -246,9 +235,8 @@ const Navbar = () => {
                         Rokomari Points
                       </Link>
                       <Link
-                        to="/"
+                        to="/profile/following"
                         className="flex gap-2 items-center text-[#212529] font-normal text-nowrap text-[1rem] hover:text-[#4398FE]"
-                       
                       >
                         <img
                           src="https://www.rokomari.com/static/200/images/user-profile/user_heart_line.svg"
@@ -258,9 +246,8 @@ const Navbar = () => {
                         Following Authors
                       </Link>
                       <Link
-                        to="/"
+                        to="/profile/bkash"
                         className="flex gap-2 items-center text-[#212529] font-normal text-nowrap text-[1rem] hover:text-[#4398FE]"
-                       
                       >
                         <img
                           src="https://www.rokomari.com/static/200/images/user-profile/arcticons_bkash.svg"
@@ -270,9 +257,8 @@ const Navbar = () => {
                         Bkash Account
                       </Link>
                       <Link
-                        to="/"
+                        to="/profile"
                         className="flex gap-2 items-center text-[#212529] font-normal text-nowrap text-[1rem] hover:text-[#4398FE]"
-                       
                       >
                         <img
                           src="https://www.rokomari.com/static/200/images/user-profile/tabler--logout-2.svg"

@@ -11,6 +11,7 @@ import Signup from './page/LoginAndRegistration/Signup'
 import Cart from './page/Cart/Cart'
 import Dashboard from './page/Dashboard/Dashboard'
 import Profile from './page/Profile/Profile'
+import ProfileSection from './page/Profile/ProfileSection'
 const App = () => {
   return (
     <BrowserRouter>
@@ -27,11 +28,12 @@ const App = () => {
           path="/book/:id"
           element={<ProtectUser element={<BookDetails />} />}
         />
-        <Route
+        {/* <Route
           path="/profile"
           element={<ProtectUser element={<Profile />} />}
-        />
+        /> */}
         <Route path="/cart" element={<ProtectUser element={<Cart />} />} />
+        <Route path="/profile/:section" element={<ProtectUser element={<ProfileSection />} />} />
         <Route path="/deshboard" element={<Dashboard/>} />
       </Routes>
 
