@@ -1,22 +1,28 @@
-import React from 'react'
-import { BrowserRouter,Routes,Route } from 'react-router-dom'
-import Navbar from './page/Layout/Navbar'
-import Footer from './page/Layout/Footer'
-import Home from './page/Home/Home'
-import ProtectUser from './page/Protect/ProtectUser'
-import BookDetails from './page/book/BookDetails'
-import Login from './page/LoginAndRegistration/Login'
-import BecomeSeller from './page/LoginAndRegistration/BecomeSeller'
-import Signup from './page/LoginAndRegistration/Signup'
-import Cart from './page/Cart/Cart'
-import Dashboard from './page/Dashboard/Dashboard'
-import Profile from './page/Profile/Profile'
-import ProfileSection from './page/Profile/ProfileSection'
+import React from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Navbar from "./page/Layout/Navbar";
+import Footer from "./page/Layout/Footer";
+import Home from "./page/Home/Home";
+import ProtectUser from "./page/Protect/ProtectUser";
+import BookDetails from "./page/book/BookDetails";
+import Login from "./page/LoginAndRegistration/Login";
+import BecomeSeller from "./page/LoginAndRegistration/BecomeSeller";
+import Signup from "./page/LoginAndRegistration/Signup";
+import Cart from "./page/Cart/Cart";
+
+import Profile from "./page/Profile/Profile";
+import ProfileSection from "./page/Profile/ProfileSection";
+import AdminNotFound from "./page/Protect/AdminNotFound";
+import NotFound from "./page/Layout/NotFound";
+import ProtectAdmin from "./page/Protect/ProtectAdmin";
+
+import DashboardLayout from "./page/Dashboard/DashboardLayout";
 const App = () => {
   return (
     <BrowserRouter>
       <Navbar />
       <Routes>
+        <Route path="*" element={<NotFound />} />
         <Route path="/" element={<Home />} />
 
         <Route path="/login" element={<Login />} />
@@ -33,13 +39,22 @@ const App = () => {
           element={<ProtectUser element={<Profile />} />}
         /> */}
         <Route path="/cart" element={<ProtectUser element={<Cart />} />} />
-        <Route path="/profile/:section" element={<ProtectUser element={<ProfileSection />} />} />
-        <Route path="/deshboard" element={<Dashboard/>} />
+        <Route
+          path="/profile/:section"
+          element={<ProtectUser element={<ProfileSection />} />}
+        />
+
+        <Route path="/adminnotfound" element={<AdminNotFound />} />
+
+        <Route
+          path="/deshboard"
+          element={<ProtectAdmin element={<DashboardLayout />} />}
+        />
       </Routes>
 
       <Footer />
     </BrowserRouter>
   );
-}
+};
 
-export default App
+export default App;
