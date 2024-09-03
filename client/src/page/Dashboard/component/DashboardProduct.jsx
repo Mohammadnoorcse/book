@@ -145,6 +145,7 @@ const columns = [
 const handleDelete = (id) => {
   console.log("Delete row with id:", id);
   // Add logic to delete the row from the state or perform any other action
+  // aminur
 };
 
 
