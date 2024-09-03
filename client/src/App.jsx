@@ -17,6 +17,7 @@ import NotFound from "./page/Layout/NotFound";
 import ProtectAdmin from "./page/Protect/ProtectAdmin";
 
 import DashboardLayout from "./page/Dashboard/DashboardLayout";
+import DashboardUserProfile from "./page/Dashboard/DashboardUserProfile";
 const App = () => {
   return (
     <BrowserRouter>
@@ -49,6 +50,10 @@ const App = () => {
         <Route
           path="/deshboard"
           element={<ProtectAdmin element={<DashboardLayout />} />}
+        />
+        <Route
+          path="/deshboard/profile/:id"
+          element={<ProtectAdmin element={<DashboardUserProfile />} />}
         />
       </Routes>
 
