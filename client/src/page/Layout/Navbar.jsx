@@ -2,32 +2,26 @@ import React, { useEffect, useState } from "react";
 import { IoIosCart } from "react-icons/io";
 import { CiSearch } from "react-icons/ci";
 import { getItemsFromLocalStorage } from "../Cart/cartlocal";
-import {Link, useLocation} from "react-router-dom"
-
-
+import { Link, useLocation } from "react-router-dom";
 
 const Navbar = () => {
-
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const[isDropDown,setIsDropDown] = useState(false);
-  const [navbarfilter,setNavbarfiter] = useState("");
+  const [isDropDown, setIsDropDown] = useState(false);
+  const [navbarfilter, setNavbarfiter] = useState("");
   const [cartItems, setCartItems] = useState([]);
 
   const handleMobileMenuToggle = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
- useEffect(() => {
-   const savedItems = getItemsFromLocalStorage("cartItem", []);
-   setCartItems(savedItems);
- }, []);
+  useEffect(() => {
+    const savedItems = getItemsFromLocalStorage("cartItem", []);
+    setCartItems(savedItems);
+  }, []);
 
- const { pathname } = useLocation();
+  const { pathname } = useLocation();
 
- const auth =true;
- const role = false;
-
-
-
+  const auth = false;
+  const role = false;
 
   return (
     <div>
@@ -424,6 +418,6 @@ const Navbar = () => {
       </nav>
     </div>
   );
-}
+};
 
-export default Navbar
+export default Navbar;

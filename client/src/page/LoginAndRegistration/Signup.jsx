@@ -1,48 +1,58 @@
 import React, { useState } from 'react';
+import { Register } from '../../api/Api';
 
 const Signup = () => {
-  const [formData, setFormData] = useState({
-    fullName: '',
-    email: '',
-    password: '',
-    confirmPassword: '',
-    image: null,
+const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    password: "",
+    password_confirmation: "",
   });
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
+    setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleImageChange = (e) => {
-    setFormData({
-      ...formData,
-      image: e.target.files[0],
-    });
-  };
-
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(formData);
-  };
 
+    if (formData.password !== formData.password_confirmation) {
+      alert("Passwords do not match");
+      return;
+    }
+
+    const { success, error, data } = await Register(formData);
+
+    if (success) {
+      alert("Registration successful!");
+      setFormData({
+        name: "",
+        email: "",
+        password: "",
+        password_confirmation: "",
+      });
+      // You can redirect or update UI here
+    } else {
+      alert(`Registration failed: ${error}`);
+      console.error("API error details:", data);
+    }
+  };
+  
   return (
-    <div className="flex justify-center items-center  bg-gray-100">
+    <div className="w-full flex justify-center items-center bg-gray-100">
       <div className="bg-white mt-10 mb-10 p-20 rounded-lg shadow-lg max-w-md w-full">
         <h2 className="text-center text-2xl font-semibold mb-6">Sign Up</h2>
-        
+
         <form onSubmit={handleSubmit}>
           {/* Full Name */}
           <div className="mb-4">
             <label className="block text-gray-700 font-semibold mb-2">Full Name</label>
             <input
               type="text"
-              name="fullName"
+              name="name"
               placeholder="Full Name"
-              value={formData.fullName}
+              value={formData.name}
               onChange={handleInputChange}
               className="w-full px-4 py-2 border rounded-md text-gray-700 focus:outline-none focus:border-blue-400"
               required
@@ -78,40 +88,29 @@ const Signup = () => {
           </div>
 
           {/* Confirm Password */}
-          <div className="mb-4">
+          <div className="mb-6">
             <label className="block text-gray-700 font-semibold mb-2">Confirm Password</label>
             <input
               type="password"
-              name="confirmPassword"
+              name="password_confirmation"
               placeholder="Confirm Password"
-              value={formData.confirmPassword}
+              value={formData.password_confirmation}
               onChange={handleInputChange}
               className="w-full px-4 py-2 border rounded-md text-gray-700 focus:outline-none focus:border-blue-400"
               required
             />
           </div>
 
-          {/* User Image */}
-          <div className="mb-6">
-            <label className="block text-gray-700 font-semibold mb-2">Profile Image</label>
-            <input
-              type="file"
-              name="image"
-              accept="image/*"
-              onChange={handleImageChange}
-              className="w-full text-gray-700"
-            />
-          </div>
-
-          {/* Submit Button */}
           <button
             type="submit"
             className="w-full bg-green-500 text-white py-2 rounded-md font-semibold hover:bg-green-600 transition-colors"
           >
             Sign Up
           </button>
-          <p className="text-gray-400 text-center mt-3">Already a Member? <a className='text-green-500' href="login">Login</a></p>
 
+          <p className="text-gray-400 text-center mt-3">
+            Already a Member? <a className="text-green-500" href="login">Login</a>
+          </p>
         </form>
       </div>
     </div>
