@@ -24,47 +24,54 @@ class ProductController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-   public function store(Request $request)
-{
-    $averageRating = 0;
+    public function store(Request $request)
+    {
+        // Initialize attribute data
+        $attributeData = [];
 
-    // Calculate average rating
-    if ($request->product_id) {
-        $averageRating = Rating::where('product_id', $request->product_id)->avg('rating') ?? 0;
+        if ($request->color) {
+            $attributeData['color'] = $request->color; // expects: ['white' => 120, ...]
+        }
+
+        if ($request->size) {
+            $attributeData['size'] = $request->size; // expects: ['m' => 120, ...]
+        }
+
+        // Create product first
+        $product = Product::create([
+            'name' => $request->name,
+            'regular_price' => $request->regular_price,
+            'current_price' => $request->current_price,
+            'discount' => $request->discount,
+            'discount_type' => $request->discount_type,
+            'endtime_offer' => $request->endtime_offer,
+            'description' => json_encode($request->description),
+            'short_description' => $request->short_description,
+            'attribute' => json_encode($attributeData),
+        ]);
+
+        // Save rating if present
+        if ($request->has('rating')) {
+            Rating::create([
+                'product_id' => $product->id,
+                'rating' => $request->rating,
+                'comment' => $request->comment,
+                'extra_props' => $request->extra_props
+            ]);
+        }
+
+        // Recalculate average rating
+        $averageRating = Rating::where('product_id', $product->id)->avg('rating') ?? 0;
+
+        // Update product with average rating
+        $product->update(['rating' => $averageRating]);
+
+        return response()->json([
+            'status' => true,
+            'message' => "Created successfully",
+            'data' => $product
+        ], 201);
     }
-
-    // Initialize attribute data
-    $attributeData = [];
-
-    if ($request->color) {
-        // expects input: ['white' => 120, 'red' => 200]
-        $attributeData['color'] = $request->color;
-    }
-
-    if ($request->size) {
-        // expects input: ['m' => 120, 'xl' => 200]
-        $attributeData['size'] = $request->size;
-    }
-
-    $product = Product::create([
-        'name' => $request->name,
-        'regular_price' => $request->regular_price,
-        'current_price' => $request->current_price,
-        'discount' => $request->discount,
-        'discount_type' => $request->discount_type,
-        'endtime_offer' => $request->endtime_offer,
-        'description' => json_encode($request->description),
-        'short_description' => $request->short_description,
-        'rating' => $averageRating,
-        'attribute' => json_encode($attributeData),
-    ]);
-
-    return response()->json([
-        'status' => true,
-        'message' => "Created successfully",
-        'data' => $product
-    ], 201);
-}
 
 
     /**
