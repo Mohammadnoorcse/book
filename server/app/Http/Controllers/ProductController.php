@@ -34,7 +34,7 @@ class ProductController extends Controller
         }
 
         if ($request->size) {
-            $attributeData['size'] = $request->size; // expects: ['m' => 120, ...]
+            $attributeData['size'] = $request->size; // expects: ['m' => 120, ....]
         }
 
         // Create product first
